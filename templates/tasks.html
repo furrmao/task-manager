@@ -1,0 +1,22 @@
+<ion-view title="Tasks">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-ios7-trash-outline"
+                ng-click="list.showDelete = !list.showDelete"></button>
+        <!--<button class="button button-icon icon ion-ios7-trash-outline" ng-click="deleteTasks()"></button>-->
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-list show-delete="list.showDelete">
+            <ion-item ng-repeat="task in tasks" class="" href="#/app/playlists/{{task.id}}">
+
+                {{task.title}}
+                <ion-delete-button class="ion-minus-circled" ng-click="deleteTask(task)">
+                </ion-delete-button>
+            </ion-item>
+
+        </ion-list>
+    </ion-content>
+</ion-view>
